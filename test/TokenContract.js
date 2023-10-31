@@ -1,11 +1,12 @@
-const StorageFactory = artifacts.require("StorageFactory");
-const TokenContract = artifacts.require("TokenContract");
+const { artifacts } = require("hardhat");
 
-contract("StorageFactory", (accounts) => {
+const TokenFactory = artifacts.require("TokenFactory");
+const TokenContract = artifacts.require("TokenContract");
+contract("TokenFactory", (accounts) => {
     let tokenFactoryInstance;
 
     before(async () => {
-        tokenFactoryInstance = await StorageFactory.deployed();
+        tokenFactoryInstance = await TokenFactory.deployed();
     });
 
     it("should create a new token", async () => {
